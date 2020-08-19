@@ -29,6 +29,19 @@
           ]
         },
         {
+          "name": "FiestasMorosYCristianosIntentHandler",
+          "slots": [],
+          "samples": [
+            "fiestas",
+            "fiestas moros y cristianos",
+            "moros y cristianos",
+            "fiestas del pueblo",
+            "fiestas municipales",
+            "como son las fiestas",
+            "fiestas patronales"
+          ]
+        },
+        {
           "name": "AMAZON.NavigateHomeIntent",
           "samples": []
         }

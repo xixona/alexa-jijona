@@ -28,6 +28,19 @@ const HelloWorldIntentHandler = {
             .getResponse();
     }
 };
+const FiestasMorosYCristianosIntentHandler = {
+    canHandle(handlerInput) {
+        return Alexa.getRequestType(handlerInput.requestEnvelope) === 'IntentRequest'
+            && Alexa.getIntentName(handlerInput.requestEnvelope) === 'FiestasMorosYCristianosIntentHandler';
+    },
+    handle(handlerInput) {
+        const speakOutput = '¿Sabías que en Xixona tenemos dos fiestas de moros y cristianos? Además de las de agosto, en octubre tenemos otras en las que participan fundamentalmente los heladeros que, por motivos obvios de trabajo, no han podido estar en Xixona durante el verano. Así que, si eres un apasionado de los moros y cristianos estás de enhorabuena porque en Xixona todavía vas a poder disfrutar de las fiestas durante este mes. ola mundo!';
+        return handlerInput.responseBuilder
+            .speak(speakOutput)
+            //.reprompt('add a reprompt if you want to keep the session open for the user to respond')
+            .getResponse();
+    }
+};
 const HelpIntentHandler = {
     canHandle(handlerInput) {
         return Alexa.getRequestType(handlerInput.requestEnvelope) === 'IntentRequest'
@@ -109,6 +122,7 @@ exports.handler = Alexa.SkillBuilders.custom()
     .addRequestHandlers(
         LaunchRequestHandler,
         HelloWorldIntentHandler,
+        FiestasMorosYCristianosIntentHandler,
         HelpIntentHandler,
         CancelAndStopIntentHandler,
         SessionEndedRequestHandler,
